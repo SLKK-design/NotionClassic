@@ -1,0 +1,29 @@
+# Build output
+build/
+cmake-build-debug/
+release/
+
+# Binaries
+*.bin
+*.dsk
+*.iso
+*.img
+*.dmg
+*.cdr
+*.APPL
+*.ad
+*.a
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Claude
+.claude/
+
+# Prefs / user data
+NotionclassicPrefs
+
+# macOS
+.DS_Store
