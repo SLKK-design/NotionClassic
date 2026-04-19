@@ -15,22 +15,23 @@ SET(SSL_ENABLED ON)
 # If debugging is enabled in the mbedtls library, then enable debugging here
 # ADD_DEFINITIONS (-DMBEDTLS_DEBUG="ON")
 
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_library(MacHTTP STATIC
-        HttpClient.cpp
-        HttpResponse.h
-        HttpResponse.cpp
-        Uri.h
-        Uri.cpp
-        RootCert.h
-        http_parser.h
-        http_parser.c
-        yuarel.c
-        yuarel.h
-        gason.cpp
-        gason.hpp
-        net_sockets_mac.c
-        uECC.c
+        src/HttpClient.cpp
+        src/HttpResponse.h
+        src/HttpResponse.cpp
+        src/Uri.h
+        src/Uri.cpp
+        src/RootCert.h
+        src/http_parser.h
+        src/http_parser.c
+        src/yuarel.c
+        src/yuarel.h
+        src/gason.cpp
+        src/gason.hpp
+        src/net_sockets_mac.c
+        src/uECC.c
 )
 
 
@@ -51,7 +52,7 @@ set(UECC_FLAGS "-m68020 \
  -DuECC_SUPPORTS_secp224r1=0 \
  -DuECC_SUPPORTS_secp256k1=0 \
  -DuECC_VLI_NATIVE_LITTLE_ENDIAN=0")
-set_source_files_properties(uECC.c uecc_alt.c PROPERTIES COMPILE_FLAGS "${UECC_FLAGS}")
+set_source_files_properties(src/uECC.c src/uecc_alt.c PROPERTIES COMPILE_FLAGS "${UECC_FLAGS}")
 
 SET(MBEDTLS_DIR "/Users/lin/Developer/Retro68/CLionProjects/mbedtls-Mac-68k-master")
 SET(MACTCPHELPER_DIR "/Users/lin/Developer/Retro68/CLionProjects/MacTCPHelper-master")
@@ -75,14 +76,14 @@ set_target_properties(MacHTTP PROPERTIES LINK_FLAGS "-Wl,-gc-sections")
 
 
 add_application(NotionClassic
-        main.cpp
-        Settings.cpp
-        fast_alloc.c
-        uecc_alt.c
-        emoji_sprite.c
-        emoji_names.c
-        #size.r
-        wdefshell.r
+        src/main.cpp
+        src/Settings.cpp
+        src/fast_alloc.c
+        src/uecc_alt.c
+        src/emoji_sprite.c
+        src/emoji_names.c
+        #src/size.r
+        src/wdefshell.r
 )
 
 target_link_libraries( NotionClassic MacHTTP )
@@ -90,7 +91,7 @@ set_target_properties(NotionClassic PROPERTIES LINK_FLAGS "-Wl,--allow-multiple-
 
 # Set hasBundle flag (0x2000) in AppleDouble Finder info so Finder uses the BNDL icon
 add_custom_command(TARGET NotionClassic_APPL POST_BUILD
-    COMMAND python3 "${CMAKE_CURRENT_SOURCE_DIR}/set_has_bundle.py" "${CMAKE_CURRENT_BINARY_DIR}/%NotionClassic.ad"
+    COMMAND python3 "${CMAKE_CURRENT_SOURCE_DIR}/src/set_has_bundle.py" "${CMAKE_CURRENT_BINARY_DIR}/%NotionClassic.ad"
     COMMENT "Setting hasBundle flag on NotionClassic.APPL"
 )
 
@@ -109,6 +110,6 @@ install(TARGETS MacHTTP
     DESTINATION "lib"
 )
 
-install(FILES HttpClient.h HttpResponse.h Uri.h http_parser.h
+install(FILES src/HttpClient.h src/HttpResponse.h src/Uri.h src/http_parser.h
     DESTINATION "include/machttp"
 )
