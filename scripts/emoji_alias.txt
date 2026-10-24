@@ -1,0 +1,410 @@
+# Look-alikes for emoji the 16 px sprite sheet doesn't have.
+#
+#   <missing codepoint>  <codepoints of an emoji that IS on the sheet>  # note
+#
+# Only the first codepoint of an emoji is looked up here; the rest of a
+# sequence is kept, so 🧑‍💻 (1F9D1 → 1F468) still finds 👨‍💻 and 🧍‍♀
+# (1F9CD → 1F6B6 200D 2642) finds 🚶‍♀.
+#
+# After editing run:  python3 scripts/make_emoji_alias.py [emoji-test.txt]
+# (emoji-test.txt from unicode.org/Public/emoji/<ver>/ checks coverage)
+
+# --- faces
+1FAE0  1F643        # melting face → upside-down face
+1F970  1F60D        # smiling face with hearts → heart-eyes
+1F929  1F60D        # star-struck → heart-eyes
+263A   1F60A        # smiling face → smiling eyes
+1F972  1F605        # smiling face with tear → grinning with sweat
+1F92A  1F61C        # zany face → winking with tongue
+1F92D  1F64A        # hand over mouth → speak-no-evil monkey
+1FAE2  1F62E        # open eyes, hand over mouth → open mouth
+1FAE3  1F648        # peeking eye → see-no-evil monkey
+1F92B  1F910        # shushing → zipper-mouth
+1FAE1  1F642        # saluting → slightly smiling
+1F928  1F914        # raised eyebrow → thinking
+1FAE5  1F636        # dotted line face → face without mouth
+1F644  1F612        # rolling eyes → unamused
+1FAE8  1F635        # shaking face → crossed-out eyes
+1FAE9  1F62A        # bags under eyes → sleepy
+1F92E  1F922        # vomiting → nauseated
+1F975  1F613        # hot face → downcast with sweat
+1F976  1F62C        # cold face → grimacing
+1F974  1F635        # woozy → crossed-out eyes
+1F92F  1F631        # exploding head → screaming
+1F973  1F389        # partying face → party popper
+1F978  1F913        # disguised face → nerd
+1F60E  1F576        # smiling with sunglasses → sunglasses
+1F9D0  1F913        # monocle → nerd
+1FAE4  1F615        # diagonal mouth → confused
+1F97A  1F61F        # pleading → worried
+1F979  1F622        # holding back tears → crying
+1F623  1F616        # persevering → confounded
+1F971  1F62B        # yawning → tired
+1F92C  1F621        # symbols on mouth → enraged
+
+# --- hearts, bubbles
+1FA77  1F497        # pink heart → growing heart
+1F9E1  1F49B        # orange heart → yellow heart
+1F499  1F49C        # blue heart → purple heart
+1FA75  1F49C        # light blue heart → purple heart
+1F90E  1F5A4        # brown heart → black heart
+1FA76  1F5A4        # grey heart → black heart
+1F90D  2764         # white heart → red heart
+1F5E8  1F4AC        # left speech bubble → speech balloon
+
+# --- hands, body
+1FAF1  1F91A        # rightwards hand → raised back of hand
+1FAF2  1F91A        # leftwards hand
+1FAF3  1F91A        # palm down hand
+1FAF4  1F91A        # palm up hand
+1FAF7  270B         # leftwards pushing hand → raised hand
+1FAF8  270B         # rightwards pushing hand → raised hand
+1F90C  1F44C        # pinched fingers → OK hand
+1F90F  1F44C        # pinching hand → OK hand
+1FAF0  1F91E        # index and thumb crossed → crossed fingers
+1F91F  1F918        # love-you gesture → sign of the horns
+1FAF5  1F449        # pointing at the viewer → pointing right
+1FAF6  2764         # heart hands → red heart
+1F932  1F450        # palms up together → open hands
+1F9BE  1F4AA        # mechanical arm → flexed biceps
+1F9BF  1F463        # mechanical leg → footprints
+1F9B5  1F463        # leg → footprints
+1F9B6  1F463        # foot → footprints
+1F9BB  1F442        # ear with hearing aid → ear
+1F9E0  1F4AD        # brain → thought balloon
+1FAC0  2764         # anatomical heart → red heart
+1FAC1  1F4A8        # lungs → dashing away
+1F9B7  1F601        # tooth → beaming face
+1F9B4  1F356        # bone → meat on bone
+1FAE6  1F444        # biting lip → mouth
+
+# --- people (sequence targets keep a ♀/♂ that follows)
+1F9D2  1F466        # child → boy
+1F9D1  1F468        # person → man (🧑‍💻 → 👨‍💻 etc.)
+1F471  1F471 200D 2642  # person: blond hair
+1F9D4  1F468        # person: beard → man
+1F9D3  1F474        # older person → old man
+1F64D  1F64D 200D 2640  # person frowning
+1F64E  1F64E 200D 2640  # person pouting
+1F64B  1F64B 200D 2640  # person raising hand
+1F9CF  1F442        # deaf person → ear
+1F46E  1F46E 200D 2642  # police officer
+1F482  1F482 200D 2642  # guard
+1F977  1F575        # ninja → detective
+1F477  1F477 200D 2642  # construction worker
+1FAC5  1F451        # person with crown → crown
+1F934  1F451        # prince → crown
+1F473  1F473 200D 2642  # person wearing turban
+1F9D5  1F473 200D 2640  # woman with headscarf → woman wearing turban
+1FAC3  1F930        # pregnant man → pregnant woman
+1FAC4  1F930        # pregnant person → pregnant woman
+1F931  1F469 200D 1F37C  # breast-feeding → woman feeding baby
+1F9B8  1F574        # superhero → person levitating
+1F9B9  1F608        # supervillain → smiling face with horns
+1F9D9  1F52E        # mage → crystal ball
+1F9DA  1F47C        # fairy → baby angel
+1F9DB  1F987        # vampire → bat
+1F9DC  1F420        # merperson → tropical fish
+1F9DD  1F47C        # elf → baby angel
+1F9DE  1F47B        # genie → ghost
+1F9DF  1F480        # zombie → skull
+1F9CC  1F479        # troll → ogre
+1F486  1F486 200D 2640  # person getting massage
+1F487  1F487 200D 2640  # person getting haircut
+1F6B6  1F6B6 200D 2642  # person walking
+1F9CD  1F6B6 200D 2642  # person standing → walking
+1F9CE  1F647        # person kneeling → bowing
+1F3C3  1F3C3 200D 2642  # person running
+1F9D6  2668         # person in steamy room → hot springs
+1F9D7  1F3C3 200D 2642  # person climbing → running
+1F3CC  1F3CC 200D 2642  # person golfing
+1F3C4  1F3C4 200D 2642  # person surfing
+1F6A3  1F6A3 200D 2642  # person rowing boat
+1F3CA  1F3CA 200D 2642  # person swimming
+26F9   26F9 200D 2642   # person bouncing ball
+1F6B4  1F6B4 200D 2642  # person biking
+1F6B5  1F6B4 200D 2642  # person mountain biking → biking
+1F93D  1F93D 200D 2642  # person playing water polo
+1F939  1F939 200D 2642  # person juggling
+1F9D8  1F64F        # person in lotus position → folded hands
+1FAC2  1F917        # people hugging → hugging face
+1F46A  1F465        # family → busts in silhouette
+1FAC6  1F446        # fingerprint → pointing up
+
+# --- animals
+1F9A7  1F98D        # orangutan → gorilla
+1F9AE  1F415        # guide dog → dog
+1F99D  1F98A        # raccoon → fox
+1FACE  1F98C        # moose → deer
+1FACF  1F434        # donkey → horse face
+1F40E  1F434        # horse → horse face
+1F993  1F434        # zebra → horse face
+1F9AC  1F403        # bison → water buffalo
+1F999  1F411        # llama → ewe
+1F992  1F98C        # giraffe → deer
+1F9A3  1F418        # mammoth → elephant
+1F99B  1F98F        # hippopotamus → rhinoceros
+1F9AB  1F43F        # beaver → chipmunk
+1F994  1F43F        # hedgehog → chipmunk
+1F9A5  1F428        # sloth → koala
+1F9A6  1F43F        # otter → chipmunk
+1F9A8  1F43F        # skunk → chipmunk
+1F998  1F407        # kangaroo → rabbit
+1F9A1  1F43B        # badger → bear
+1F9A2  1F986        # swan → duck
+1F9A4  1F426        # dodo → bird
+1FAB6  1F343        # feather → leaf in wind
+1F9A9  1F426        # flamingo → bird
+1F99A  1F983        # peacock → turkey
+1F99C  1F426        # parrot → bird
+1FABD  1F54A        # wing → dove
+1FABF  1F986        # goose → duck
+1F995  1F409        # sauropod → dragon
+1F996  1F98E        # T-Rex → lizard
+1F9AD  1F42C        # seal → dolphin
+1FAB8  1F41A        # coral → spiral shell
+1FABC  1F991        # jellyfish → squid
+1F99E  1F980        # lobster → crab
+1F9AA  1F41A        # oyster → spiral shell
+1FAB2  1F41E        # beetle → lady beetle
+1F997  1F41B        # cricket → bug
+1FAB3  1F41C        # cockroach → ant
+1F99F  1F41D        # mosquito → honeybee
+1FAB0  1F41D        # fly → honeybee
+1FAB1  1F41B        # worm → bug
+1F9A0  1F52C        # microbe → microscope
+
+# --- plants
+1F338  1F33C        # cherry blossom → blossom
+1FAB7  1F33A        # lotus → hibiscus
+1FABB  1F337        # hyacinth → tulip
+1FAB4  1F331        # potted plant → seedling
+1FAB9  1F342        # empty nest → fallen leaf
+1FABA  1F95A        # nest with eggs → egg
+1FABE  1F333        # leafless tree → deciduous tree
+
+# --- food and drink
+1F96D  1F351        # mango → peach
+1FAD0  1F347        # blueberries → grapes
+1FAD2  1F347        # olive → grapes
+1F965  1F330        # coconut → chestnut
+1FAD1  1F336        # bell pepper → hot pepper
+1F96C  1F33F        # leafy green → herb
+1F966  1F333        # broccoli → deciduous tree
+1F9C4  1F330        # garlic → chestnut
+1F9C5  1F330        # onion → chestnut
+1FAD8  1F95C        # beans → peanuts
+1FADA  1F954        # ginger root → potato
+1FADB  1F952        # pea pod → cucumber
+1FADC  1F955        # root vegetable → carrot
+1FAD3  1F959        # flatbread → stuffed flatbread
+1F968  1F950        # pretzel → croissant
+1F96F  1F369        # bagel → doughnut
+1F9C7  1F95E        # waffle → pancakes
+1F969  1F356        # cut of meat → meat on bone
+1F96A  1F354        # sandwich → hamburger
+1FAD4  1F32F        # tamale → burrito
+1F9C6  1F959        # falafel → stuffed flatbread
+1FAD5  1F372        # fondue → pot of food
+1F963  1F372        # bowl with spoon → pot of food
+1F9C8  1F9C0        # butter → cheese wedge
+1F9C2  1F95B        # salt → glass of milk
+1F96B  1F6E2        # canned food → oil drum
+1F96E  1F358        # moon cake → rice cracker
+1F95F  1F359        # dumpling → rice ball
+1F960  1F36A        # fortune cookie → cookie
+1F961  1F371        # takeout box → bento box
+1F9C1  1F370        # cupcake → shortcake
+1F967  1F370        # pie → shortcake
+1FAD6  1F375        # teapot → teacup
+1F377  1F378        # wine glass → cocktail glass
+1F379  1F378        # tropical drink → cocktail glass
+1F942  1F37B        # clinking glasses → clinking beer mugs
+1FAD7  1F4A7        # pouring liquid → droplet
+1F964  1F95B        # cup with straw → glass of milk
+1F9CB  1F95B        # bubble tea → glass of milk
+1F9C3  1F95B        # beverage box → glass of milk
+1F9C9  1F375        # mate → teacup
+1F9CA  2744         # ice → snowflake
+1F962  1F374        # chopsticks → fork and knife
+1FAD9  1F36F        # jar → honey pot
+
+# --- places and travel
+1F9ED  1F5FA        # compass → world map
+1F3D4  1F304        # snow-capped mountain → sunrise over mountains
+26F0   1F304        # mountain → sunrise over mountains
+1F5FB  1F30B        # mount fuji → volcano
+1F9F1  1F3D7        # brick → building construction
+1FAA8  1F5FF        # rock → moai
+1FAB5  1F332        # wood → evergreen tree
+1F6D6  1F3E0        # hut → house
+1F6D5  1F6D0        # hindu temple → place of worship
+1F6DD  1F3A2        # playground slide → roller coaster
+1F6FB  1F69A        # pickup truck → delivery truck
+1F9BD  267F         # manual wheelchair → wheelchair symbol
+1F9BC  267F         # motorized wheelchair → wheelchair symbol
+1F6FA  1F6F5        # auto rickshaw → motor scooter
+1F6F9  1F6F4        # skateboard → kick scooter
+1F6FC  26F8         # roller skate → ice skate
+1F6DE  2699         # wheel → gear
+1F6DF  2B55         # ring buoy → hollow red circle
+1FA82  2602         # parachute → umbrella
+1F6F8  1F47D        # flying saucer → alien
+1F9F3  1F4BC        # luggage → briefcase
+1FA90  1F310        # ringed planet → globe with meridians
+26A1   1F329        # high voltage → cloud with lightning
+
+# --- events, sport, games
+1F9E8  1F387        # firecracker → sparkler
+1F9E7  2709         # red envelope → envelope
+1F94E  26BE         # softball → baseball
+1F94F  1F4BF        # flying disc → optical disk
+1F94D  1F3D1        # lacrosse → field hockey
+1F93F  1F3CA 200D 2642  # diving mask → swimming
+1F6F7  1F3BF        # sled → skis
+1F94C  1F3B3        # curling stone → bowling
+1FA80  1F518        # yo-yo → radio button
+1FA81  1F536        # kite → large orange diamond
+1FA84  2728         # magic wand → sparkles
+1F9E9  1F3B2        # puzzle piece → game die
+1F9F8  1F43B        # teddy bear → bear
+1FA85  1F38A        # piñata → confetti ball
+1FAA9  1F52E        # mirror ball → crystal ball
+1FA86  1F38E        # nesting dolls → Japanese dolls
+265F   1F3B2        # chess pawn → game die
+1F9F5  27B0         # thread → curly loop
+1FAA1  1F4CD        # sewing needle → round pushpin
+1F9F6  27BF         # yarn → double curly loop
+1FAA2  27B0         # knot → curly loop
+
+# --- clothing
+1F97D  1F576        # goggles → sunglasses
+1F97C  1F94B        # lab coat → martial arts uniform
+1F9BA  1F3BD        # safety vest → running shirt
+1F9E3  1F454        # scarf → necktie
+1F9E4  1F94A        # gloves → boxing glove
+1F9E5  1F455        # coat → t-shirt
+1F9E6  1F462        # socks → boot
+1F97B  1F458        # sari → kimono
+1FA71  1F459        # one-piece swimsuit → bikini
+1FA72  1F459        # briefs → bikini
+1FA73  1F456        # shorts → jeans
+1FAAD  1F390        # folding hand fan → wind chime
+1FA74  1F461        # thong sandal → sandal
+1F97E  1F462        # hiking boot → boot
+1F97F  1F45E        # flat shoe → man's shoe
+1FA70  1F460        # ballet shoes → high-heeled shoe
+1FAAE  1F488        # hair pick → barber pole
+1F9E2  1F452        # billed cap → woman's hat
+1FA96  26D1         # military helmet → rescue worker's helmet
+
+# --- music, objects
+1FA97  1F3B9        # accordion → musical keyboard
+1FA95  1F3B8        # banjo → guitar
+1FA98  1F941        # long drum → drum
+1FA87  1F3B6        # maracas → musical notes
+1FA88  1F3B7        # flute → saxophone
+1FA89  1F3BB        # harp → violin
+1FAAB  1F50B        # low battery → battery
+1F9EE  1F522        # abacus → input numbers
+1FA94  1F56F        # diya lamp → candle
+1FA99  1F4B0        # coin → money bag
+1F9FE  1F4C3        # receipt → page with curl
+1F4E5  1F4E4        # inbox tray → outbox tray
+1FA93  26CF         # axe → pick
+1FA83  1F3F9        # boomerang → bow and arrow
+1FA9A  1F528        # carpentry saw → hammer
+1FA9B  1F527        # screwdriver → wrench
+1F9AF  1F468 200D 1F9AF  # white cane → man with white cane
+1FA9D  1F3A3        # hook → fishing pole
+1F9F0  1F6E0        # toolbox → hammer and wrench
+1F9F2  1F529        # magnet → nut and bolt
+1FA9C  1F6E4        # ladder → railway track
+1FA8F  26CF         # shovel → pick
+1F9EA  2697         # test tube → alembic
+1F9EB  1F52C        # petri dish → microscope
+1F9EC  1F52C        # dna → microscope
+1FA78  1F4A7        # drop of blood → droplet
+1FA79  1F915        # adhesive bandage → face with head-bandage
+1FA7C  267F         # crutch → wheelchair symbol
+1FA7A  1F468 200D 2695  # stethoscope → man health worker
+1FA7B  1F480        # x-ray → skull
+1F6D7  1F6AA        # elevator → door
+1FA9E  1F5BC        # mirror → framed picture
+1FA9F  1F5BC        # window → framed picture
+1FA91  1F4BA        # chair → seat
+1FAA0  1F6BD        # plunger → toilet
+1FAA4  1F401        # mouse trap → mouse
+1FA92  1F488        # razor → barber pole
+1F9F4  1F376        # lotion bottle → sake
+1F9F7  1F4CE        # safety pin → paperclip
+1F9F9  1F5D1        # broom → wastebasket
+1F9FA  1F6D2        # basket → shopping cart
+1F9FB  1F4DC        # roll of paper → scroll
+1FAA3  1F5D1        # bucket → wastebasket
+1F9FC  1F6C1        # soap → bathtub
+1FAE7  26AA         # bubbles → white circle
+1FAA5  1F58C        # toothbrush → paintbrush
+1F9FD  1F6C1        # sponge → bathtub
+1F9EF  1F692        # fire extinguisher → fire engine
+1FAA6  26B0         # headstone → coffin
+1F9FF  1F535        # nazar amulet → blue circle
+1FAAC  270B         # hamsa → raised hand
+1FAA7  1F68F        # placard → bus stop
+1FAAA  1F4B3        # identification card → credit card
+
+# --- symbols
+1FAAF  2694         # khanda → crossed swords
+1F6DC  1F4F6        # wireless → antenna bars
+2640   1F6BA        # female sign → women's room
+2642   1F6B9        # male sign → men's room
+1F7F0  2796         # heavy equals sign → minus
+267E   27BF         # infinity → double curly loop
+2695   1F3E5        # medical symbol → hospital
+1F531  269C         # trident emblem → fleur-de-lis
+1FADF  1F4A6        # splatter → sweat droplets
+1F7E0  1F536        # orange circle → orange diamond
+1F7E1  1F315        # yellow circle → full moon
+1F7E2  2705         # green circle → check mark button
+1F7E3  1F535        # purple circle → blue circle
+1F7E4  26AB         # brown circle → black circle
+1F7E5  1F534        # red square → red circle
+1F7E7  1F536        # orange square → orange diamond
+1F7E8  1F315        # yellow square → full moon
+1F7E9  2705         # green square → check mark button
+1F7E6  1F537        # blue square → blue diamond
+1F7EA  1F537        # purple square → blue diamond
+1F7EB  2B1B         # brown square → black large square
+
+# --- flags: the sheet has none, so every flag shows the flag in a hole
+1F3C1  26F3         # chequered flag
+1F6A9  26F3         # triangular flag
+1F38C  26F3         # crossed flags
+1F3F4  26F3         # black flag (and England, Scotland, Wales)
+1F3F3  26F3         # white flag (and rainbow, transgender flag)
+1F1E6  26F3         # country flags start with a regional indicator A–Z
+1F1E7  26F3
+1F1E8  26F3
+1F1E9  26F3
+1F1EA  26F3
+1F1EB  26F3
+1F1EC  26F3
+1F1ED  26F3
+1F1EE  26F3
+1F1EF  26F3
+1F1F0  26F3
+1F1F1  26F3
+1F1F2  26F3
+1F1F3  26F3
+1F1F4  26F3
+1F1F5  26F3
+1F1F6  26F3
+1F1F7  26F3
+1F1F8  26F3
+1F1F9  26F3
+1F1FA  26F3
+1F1FB  26F3
+1F1FC  26F3
+1F1FD  26F3
+1F1FE  26F3
+1F1FF  26F3
